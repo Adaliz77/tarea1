@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "medicos")
-public class MedicoCabecera implements Serializable{
+public class Medicocabecera implements Serializable{
 	
 	/**
 	 * 
@@ -33,15 +33,15 @@ public class MedicoCabecera implements Serializable{
 	@Column(nullable = false, unique = true)
 	private String numeroColegiado;
 	
-	@OneToMany(mappedBy = "medico", fetch = FetchType.LAZY,
+	@OneToMany(mappedBy = "medicoCabecera", fetch = FetchType.LAZY,
 			cascade = CascadeType.ALL)
-	private Set<Paciente> pacientes;
+	private Set<Paciente> paciente;
 	
-	public MedicoCabecera() {
+	public Medicocabecera() {
 		
 	}
 
-	public MedicoCabecera(String nombre, String apellido, String numeroColegiado) {
+	public Medicocabecera(String nombre, String apellido, String numeroColegiado) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.numeroColegiado = numeroColegiado;

@@ -6,7 +6,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,7 +21,14 @@ public class Rueda {
 	@Column(nullable = false)
 	private String tipo;
 	
-	@ManyToMany(mappedBy = "rueda")
-	private Set<Vehiculo> vehiculos;
+	@ManyToOne
+	@JoinColumn(name="vehiculo_id", nullable = false)
+	private Vehiculo vehiculo;
+
+	public Rueda() {
+		
+	}
+	
+	
 
 }

@@ -33,16 +33,15 @@ public class Paciente implements Serializable{
 	private String numeroHistorial;
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "medico_id", nullable = false)
-	private MedicoCabecera medicoCabecera;
+	@JoinColumn(name = "medicocabecera_id", nullable = false)
+	private Medicocabecera medicoCabecera;
 	
 
 	public Paciente() {
 	
 	}
 
-	public Paciente(String nombre, String apellido, String numeroHistorial, MedicoCabecera medicoCabecera) {
-		super();
+	public Paciente(String nombre, String apellido, String numeroHistorial, Medicocabecera medicoCabecera) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.numeroHistorial = numeroHistorial;
